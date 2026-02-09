@@ -169,23 +169,23 @@ html:not(.dark) {
 }
 
 .dark {
-  --background: oklch(0.14 0.005 60);
+  --background: oklch(0.16 0.008 60);
   --foreground: oklch(0.93 0.005 60);
-  --card: oklch(0.17 0.005 60);
+  --card: oklch(0.20 0.008 60);
   --card-foreground: oklch(0.93 0.005 60);
-  --popover: oklch(0.17 0.005 60);
+  --popover: oklch(0.20 0.008 60);
   --popover-foreground: oklch(0.93 0.005 60);
   --primary: oklch(0.72 0.12 180);
   --primary-foreground: oklch(0.1 0.02 180);
-  --secondary: oklch(0.22 0.005 60);
+  --secondary: oklch(0.24 0.008 60);
   --secondary-foreground: oklch(0.88 0.005 60);
-  --muted: oklch(0.22 0.005 60);
-  --muted-foreground: oklch(0.63 0.01 60);
-  --accent: oklch(0.22 0.015 180);
+  --muted: oklch(0.24 0.008 60);
+  --muted-foreground: oklch(0.68 0.012 60);
+  --accent: oklch(0.24 0.015 180);
   --accent-foreground: oklch(0.88 0.02 180);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 12%);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.72 0.12 180);
   --chart-1: oklch(0.72 0.12 180);
   --chart-2: oklch(0.6 0.15 200);
