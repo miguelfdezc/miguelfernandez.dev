@@ -101,23 +101,35 @@ const navItems = [
 </header>
 
 <script is:inline>
-  const mobileMenuBtn = document.getElementById("mobile-menu-btn")
-  const mobileMenu = document.getElementById("mobile-menu")
-  const menuIcon = document.getElementById("menu-icon")
-  const closeIcon = document.getElementById("close-icon")
+  ;(function() {
+    function initMobileMenu() {
+      var mobileMenuBtn = document.getElementById("mobile-menu-btn")
+      var mobileMenu = document.getElementById("mobile-menu")
+      var menuIcon = document.getElementById("menu-icon")
+      var closeIcon = document.getElementById("close-icon")
 
-  mobileMenuBtn.addEventListener("click", () => {
-    const isOpen = !mobileMenu.classList.contains("hidden")
-    mobileMenu.classList.toggle("hidden")
-    menuIcon.classList.toggle("hidden")
-    closeIcon.classList.toggle("hidden")
-  })
+      if (!mobileMenuBtn) return
 
-  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden")
-      menuIcon.classList.remove("hidden")
-      closeIcon.classList.add("hidden")
-    })
-  })
+      mobileMenuBtn.addEventListener("click", function() {
+        mobileMenu.classList.toggle("hidden")
+        menuIcon.classList.toggle("hidden")
+        closeIcon.classList.toggle("hidden")
+      })
+
+      document.querySelectorAll(".mobile-nav-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+          mobileMenu.classList.add("hidden")
+          menuIcon.classList.remove("hidden")
+          closeIcon.classList.add("hidden")
+        })
+      })
+    }
+
+    initMobileMenu()
+
+    if (!window.__mobileMenuListenerSet) {
+      window.__mobileMenuListenerSet = true
+      document.addEventListener("astro:after-swap", initMobileMenu)
+    }
+  })()
 </script>

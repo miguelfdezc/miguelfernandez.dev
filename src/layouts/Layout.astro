@@ -6,6 +6,7 @@ import "@fontsource/geist-sans/700.css"
 import "@fontsource/geist-mono/400.css"
 import "@/styles/global.css"
 
+import { ViewTransitions } from "astro:transitions"
 import Header from "@/components/Header.astro"
 import Footer from "@/components/Footer.astro"
 import type { Lang } from "@/i18n"
@@ -55,13 +56,14 @@ const alternateURL = new URL(`/${alternateLang}/${currentPath}`, Astro.site)
     <meta name="twitter:image" content={new URL(image, Astro.site)} />
 
     <title>{title}</title>
+    <ViewTransitions />
 
     <!-- Datafast Analytics -->
     <script
       defer
       data-website-id="dfid_Pha1CJGQARf8eH5Xyrvdz"
       data-domain="miguelfernandez.dev"
-      src="https://datafa.st/js/script.js"></script>
+      src="/js/script.js"></script>
   </head>
 
   <body class="relative bg-background text-foreground">

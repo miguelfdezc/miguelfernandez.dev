@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 
-import AnimatedHero from "@/components/AnimatedHero"
+import Hero from "@/components/Hero.astro"
 import AnimatedProjects from "@/components/AnimatedProjects"
 import AnimatedExperience from "@/components/AnimatedExperience"
 import AnimatedEducation from "@/components/AnimatedEducation"
@@ -10,7 +10,7 @@ import AboutMe from "@/components/AboutMe.astro"
 import Contact from "@/components/Contact.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 
-import { useTranslations, getCvPath, type Lang } from "@/i18n"
+import { useTranslations, type Lang } from "@/i18n"
 import { getProjects } from "@/i18n/data/projects"
 import { getExperience, getEducation } from "@/i18n/data/experience"
 
@@ -29,15 +29,6 @@ const serializedProjects = projects.map((p) => ({
 
 const experience = getExperience(lang)
 const education = getEducation(lang)
-const cvUrl = getCvPath(lang)
-
-const heroTranslations = {
-  badge: t("hero.badge"),
-  subtitle: t("hero.subtitle"),
-  description: t("hero.description"),
-  cta: t("hero.cta"),
-  cv: t("hero.cv"),
-}
 ---
 
 <Layout
@@ -47,7 +38,7 @@ const heroTranslations = {
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-28">
-      <AnimatedHero client:load translations={heroTranslations} cvUrl={cvUrl} />
+      <Hero lang={lang} />
     </SectionContainer>
 
     <div class="space-y-20">
