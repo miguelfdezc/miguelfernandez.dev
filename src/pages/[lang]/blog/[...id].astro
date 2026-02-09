@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from "astro:content"
+import BlogPost from "@/layouts/BlogPost.astro"
+import type { Lang } from "@/i18n"
+
+export async function getStaticPaths() {
+  let posts: Awaited<ReturnType<typeof getCollection>> = []
+  try {
+    posts = await getCollection("blog", ({ data }) => !data.draft)
+  } catch {
+    // Collection is empty
+  }
+
+  return posts.map((post) => ({
+    params: {
+      lang: post.data.lang,
+      id: post.id.replace(/^(en|es)\//, ""),
+    },
+    props: { post, lang: post.data.lang as Lang },
+  }))
+}
+
+const { post, lang } = Astro.props
+const { Content } = await render(post)
+---
+
+<BlogPost {...post.data} lang={lang}>
+  <Content />
+</BlogPost>

@@ -1,0 +1,61 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import { getCollection } from "astro:content"
+import { useTranslations, formatDate, type Lang } from "@/i18n"
+
+export function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "es" } }]
+}
+
+const lang = Astro.params.lang as Lang
+const t = useTranslations(lang)
+
+let sortedPosts: Awaited<ReturnType<typeof getCollection>>  = []
+try {
+  const posts = await getCollection("blog", ({ data }) => !data.draft && data.lang === lang)
+  sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+} catch {
+  // Collection is empty — this is expected before the first post
+}
+
+const getSlug = (id: string) => id.replace(/^(en|es)\//, "")
+---
+
+<Layout
+  title={`${t("blog.title")} | Miguel Fernández`}
+  description={t("blog.description")}
+  lang={lang}
+>
+  <main class="px-4">
+    <SectionContainer class="py-20 md:py-36">
+      <h1 class="text-4xl font-bold text-foreground mb-4">{t("blog.title")}</h1>
+      <p class="text-muted-foreground text-lg mb-12">
+        {t("blog.description")}
+      </p>
+
+      {sortedPosts.length === 0 ? (
+        <div class="text-center py-20">
+          <p class="text-muted-foreground text-lg">{t("blog.empty")}</p>
+          <p class="text-muted-foreground/60 text-sm mt-2">{t("blog.empty.sub")}</p>
+        </div>
+      ) : (
+        <ul class="space-y-8">
+          {sortedPosts.map((post) => (
+            <li>
+              <a href={`/${lang}/blog/${getSlug(post.id)}`} class="group block p-6 rounded-xl border border-border hover:border-primary/30 hover:bg-muted/50 transition">
+                <time class="text-sm text-muted-foreground">
+                  {formatDate(post.data.pubDate, lang)}
+                </time>
+                <h2 class="text-xl font-bold text-foreground mt-1 group-hover:text-primary transition">
+                  {post.data.title}
+                </h2>
+                <p class="text-muted-foreground mt-2">{post.data.description}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </SectionContainer>
+  </main>
+</Layout>

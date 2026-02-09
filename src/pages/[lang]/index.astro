@@ -1,0 +1,97 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import AnimatedHero from "@/components/AnimatedHero"
+import AnimatedProjects from "@/components/AnimatedProjects"
+import AnimatedExperience from "@/components/AnimatedExperience"
+import AnimatedEducation from "@/components/AnimatedEducation"
+import AnimatedSection from "@/components/AnimatedSection"
+import AboutMe from "@/components/AboutMe.astro"
+import Contact from "@/components/Contact.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+
+import { useTranslations, getCvPath, type Lang } from "@/i18n"
+import { getProjects } from "@/i18n/data/projects"
+import { getExperience, getEducation } from "@/i18n/data/experience"
+
+export function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "es" } }]
+}
+
+const lang = Astro.params.lang as Lang
+const t = useTranslations(lang)
+
+const projects = getProjects(lang)
+const serializedProjects = projects.map((p) => ({
+  ...p,
+  tags: p.tags.map((tag) => ({ name: tag.name, class: tag.class })),
+}))
+
+const experience = getExperience(lang)
+const education = getEducation(lang)
+const cvUrl = getCvPath(lang)
+
+const heroTranslations = {
+  badge: t("hero.badge"),
+  subtitle: t("hero.subtitle"),
+  description: t("hero.description"),
+  cta: t("hero.cta"),
+  cv: t("hero.cv"),
+}
+---
+
+<Layout
+  title={t("meta.title")}
+  description={t("meta.description")}
+  lang={lang}
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-28">
+      <AnimatedHero client:load translations={heroTranslations} cvUrl={cvUrl} />
+    </SectionContainer>
+
+    <div class="space-y-20">
+      <SectionContainer id="projects">
+        <AnimatedSection client:visible>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.projects")}</h2>
+          <p class="mt-1 text-sm text-muted-foreground">{t("section.projects.subtitle")}</p>
+        </AnimatedSection>
+        <AnimatedProjects client:visible projects={serializedProjects} />
+      </SectionContainer>
+
+      <SectionContainer id="experience">
+        <AnimatedSection client:visible>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.experience")}</h2>
+          <p class="mt-1 text-sm text-muted-foreground">{t("section.experience.subtitle")}</p>
+        </AnimatedSection>
+        <AnimatedExperience client:visible experience={experience} connectorText={t("connector.at")} />
+      </SectionContainer>
+
+      <SectionContainer id="education">
+        <AnimatedSection client:visible>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.education")}</h2>
+          <p class="mt-1 text-sm text-muted-foreground">{t("section.education.subtitle")}</p>
+        </AnimatedSection>
+        <AnimatedEducation client:visible education={education} connectorText={t("connector.at")} />
+      </SectionContainer>
+
+      <SectionContainer id="about-me">
+        <AnimatedSection client:visible>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.about")}</h2>
+          <p class="mt-1 text-sm text-muted-foreground">{t("section.about.subtitle")}</p>
+        </AnimatedSection>
+        <AboutMe lang={lang} />
+      </SectionContainer>
+
+      <SectionContainer id="contact">
+        <AnimatedSection client:visible>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight text-center">{t("section.contact")}</h2>
+          <p class="mt-1 text-sm text-muted-foreground text-center">{t("section.contact.subtitle")}</p>
+        </AnimatedSection>
+        <div class="mt-6">
+          <Contact lang={lang} />
+        </div>
+      </SectionContainer>
+    </div>
+  </main>
+</Layout>
