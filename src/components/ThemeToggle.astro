@@ -1,0 +1,102 @@
+---
+const THEMES = ["Light", "Dark", "System"]
+---
+
+<div class="relative">
+  <button
+    id="theme-toggle-btn"
+    class="appearance-none border-none flex p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+  >
+    <span class="sr-only">Choose theme</span>
+    <svg id="light" class="theme-toggle-icon size-4 transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+      <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+    </svg>
+    <svg id="dark" class="theme-toggle-icon absolute size-4 transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+    <svg id="system" class="theme-toggle-icon absolute size-4 transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z" />
+      <path d="M7 20h10" />
+      <path d="M9 16v4" />
+      <path d="M15 16v4" />
+    </svg>
+  </button>
+  <div
+    id="themes-menu"
+    class="absolute hidden top-10 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-border bg-popover text-popover-foreground shadow-md"
+  >
+    <ul>
+      {
+        THEMES.map((theme) => (
+          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-muted rounded-sm text-sm">
+            {theme}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  #themes-menu.open {
+    display: inline;
+    animation: scale-up 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes scale-up {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+
+<script is:inline>
+  let remove = null
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
+  const themesMenu = document.getElementById("themes-menu")
+
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem("theme") ?? "system"
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  }
+
+  const updateIcon = (themePreference) => {
+    document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
+      element.style.scale = element.id === themePreference ? "1" : "0"
+    })
+  }
+
+  const updateTheme = () => {
+    if (remove != null) remove()
+    matchMedia.addEventListener("change", updateTheme)
+    remove = () => matchMedia.removeEventListener("change", updateTheme)
+
+    const themePreference = getThemePreference()
+    const isDark = themePreference === "dark" || (themePreference === "system" && matchMedia.matches)
+
+    updateIcon(themePreference)
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+  }
+
+  updateTheme()
+
+  document.addEventListener("click", () => themesMenu.classList.remove("open"))
+
+  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
+    e.stopPropagation()
+    const isClosed = !themesMenu.classList.contains("open")
+    themesMenu.classList[isClosed ? "add" : "remove"]("open")
+  })
+
+  document.querySelectorAll(".themes-menu-option").forEach((element) => {
+    element.addEventListener("click", (e) => {
+      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
+      updateTheme()
+    })
+  })
+</script>

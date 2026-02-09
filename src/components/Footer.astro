@@ -1,0 +1,24 @@
+---
+import { useTranslations, type Lang } from "@/i18n"
+
+interface Props {
+  lang?: Lang
+}
+
+const { lang = "en" } = Astro.props
+const t = useTranslations(lang)
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="mt-20 pb-8 w-full mx-auto container lg:max-w-5xl px-4">
+  <div class="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <span class="text-sm text-muted-foreground">
+      &copy; {currentYear} Miguel Fern&aacute;ndez Carratal&aacute;. {t("footer.rights")}
+    </span>
+    <nav class="flex gap-4 text-sm text-muted-foreground">
+      <a href={`/${lang}/#about-me`} class="hover:text-primary transition">{t("nav.about")}</a>
+      <a href={`/${lang}/#contact`} class="hover:text-primary transition">{t("section.contact")}</a>
+      <a href={`/${lang}/blog`} class="hover:text-primary transition">{t("nav.blog")}</a>
+    </nav>
+  </div>
+</footer>

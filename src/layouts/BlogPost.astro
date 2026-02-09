@@ -1,0 +1,49 @@
+---
+import Layout from "./Layout.astro"
+import { useTranslations, formatDate, type Lang } from "@/i18n"
+
+interface Props {
+  title: string
+  description: string
+  pubDate: Date
+  updatedDate?: Date
+  tags?: string[]
+  lang?: Lang
+}
+
+const { title, description, pubDate, updatedDate, tags, lang = "en" } = Astro.props
+const t = useTranslations(lang)
+
+const formattedDate = formatDate(pubDate, lang)
+const formattedUpdatedDate = updatedDate ? formatDate(updatedDate, lang) : undefined
+---
+
+<Layout title={`${title} | Miguel Fernández`} description={description} lang={lang}>
+  <main class="px-4">
+    <article class="w-full mx-auto container lg:max-w-3xl md:max-w-2xl py-20 md:py-36">
+      <header class="mb-12">
+        <a href={`/${lang}/blog`} class="text-sm text-muted-foreground hover:text-primary transition mb-6 inline-block">
+          &larr; {t("blog.back")}
+        </a>
+        <time class="block text-sm text-muted-foreground mb-2">{formattedDate}</time>
+        {formattedUpdatedDate && (
+          <p class="text-sm text-muted-foreground/70 mb-2">{t("blog.updated")} {formattedUpdatedDate}</p>
+        )}
+        <h1 class="text-4xl font-bold text-foreground">{title}</h1>
+        {tags && tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-4">
+            {tags.map((tag) => (
+              <span class="text-xs px-2 py-1 rounded-full bg-secondary text-muted-foreground border border-border">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <div class="prose dark:prose-invert prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-foreground prose-code:text-primary prose-pre:bg-card prose-pre:border prose-pre:border-border prose-blockquote:border-primary/30 prose-blockquote:text-muted-foreground prose-li:text-muted-foreground">
+        <slot />
+      </div>
+    </article>
+  </main>
+</Layout>

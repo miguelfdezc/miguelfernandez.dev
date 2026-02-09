@@ -1,0 +1,123 @@
+---
+import ThemeToggle from "./ThemeToggle.astro"
+import { useTranslations, getLocalePath, type Lang } from "@/i18n"
+
+interface Props {
+  lang?: Lang
+}
+
+const { lang = "en" } = Astro.props
+const t = useTranslations(lang)
+const alternateLang = lang === "en" ? "es" : "en"
+const alternatePath = getLocalePath(Astro.url.pathname, alternateLang)
+
+const navItems = [
+  { title: t("nav.projects"), url: `/${lang}/#projects` },
+  { title: t("nav.experience"), url: `/${lang}/#experience` },
+  { title: t("nav.education"), url: `/${lang}/#education` },
+  { title: t("nav.about"), url: `/${lang}/#about-me` },
+  { title: t("nav.blog"), url: `/${lang}/blog` },
+]
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
+  <div class="mx-auto container lg:max-w-5xl flex h-14 items-center justify-between px-4">
+    <a href={`/${lang}/`} class="font-semibold text-foreground tracking-tight text-sm">
+      miguelfernandez<span class="text-primary">.</span>dev
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden sm:flex items-center gap-1">
+      {
+        navItems.map((link) => (
+          <a
+            class="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+      <div class="ml-2 pl-2 border-l border-border flex items-center gap-1">
+        <a
+          href={alternatePath}
+          class="px-2 py-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted uppercase"
+          aria-label={`Switch to ${alternateLang === "en" ? "English" : "Español"}`}
+        >
+          {alternateLang.toUpperCase()}
+        </a>
+        <ThemeToggle />
+      </div>
+    </nav>
+
+    <!-- Mobile nav -->
+    <div class="flex sm:hidden items-center gap-1">
+      <a
+        href={alternatePath}
+        class="p-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted uppercase"
+        aria-label={`Switch to ${alternateLang === "en" ? "English" : "Español"}`}
+      >
+        {alternateLang.toUpperCase()}
+      </a>
+      <ThemeToggle />
+      <button
+        id="mobile-menu-btn"
+        class="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg id="menu-icon" class="size-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M4 6h16" />
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="size-5 hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M18 6l-12 12" />
+          <path d="M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <nav
+    id="mobile-menu"
+    class="hidden sm:hidden border-t border-border/40 bg-background/95 backdrop-blur-lg"
+  >
+    <div class="mx-auto container lg:max-w-5xl px-4 py-3 flex flex-col gap-1">
+      {
+        navItems.map((link) => (
+          <a
+            class="mobile-nav-link px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn")
+  const mobileMenu = document.getElementById("mobile-menu")
+  const menuIcon = document.getElementById("menu-icon")
+  const closeIcon = document.getElementById("close-icon")
+
+  mobileMenuBtn.addEventListener("click", () => {
+    const isOpen = !mobileMenu.classList.contains("hidden")
+    mobileMenu.classList.toggle("hidden")
+    menuIcon.classList.toggle("hidden")
+    closeIcon.classList.toggle("hidden")
+  })
+
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden")
+      menuIcon.classList.remove("hidden")
+      closeIcon.classList.add("hidden")
+    })
+  })
+</script>

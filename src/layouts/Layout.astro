@@ -1,0 +1,97 @@
+---
+import "@fontsource/geist-sans/400.css"
+import "@fontsource/geist-sans/500.css"
+import "@fontsource/geist-sans/600.css"
+import "@fontsource/geist-sans/700.css"
+import "@fontsource/geist-mono/400.css"
+import "@/styles/global.css"
+
+import Header from "@/components/Header.astro"
+import Footer from "@/components/Footer.astro"
+import type { Lang } from "@/i18n"
+
+interface Props {
+  title: string
+  description: string
+  image?: string
+  lang?: Lang
+}
+
+const { description, title, image = "/og-image.png", lang = "en" } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const alternateLang = lang === "en" ? "es" : "en"
+const currentPath = Astro.url.pathname.split("/").slice(2).join("/")
+const alternateURL = new URL(`/${alternateLang}/${currentPath}`, Astro.site)
+---
+
+<!doctype html>
+<html lang={lang} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang={lang} href={canonicalURL} />
+    <link rel="alternate" hreflang={alternateLang} href={alternateURL} />
+    <link rel="alternate" hreflang="x-default" href={new URL("/en/" + currentPath, Astro.site)} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:locale" content={lang === "es" ? "es_ES" : "en_US"} />
+    <meta property="og:locale:alternate" content={lang === "es" ? "en_US" : "es_ES"} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+    <title>{title}</title>
+
+    <!-- Datafast Analytics -->
+    <script
+      defer
+      data-website-id="dfid_Pha1CJGQARf8eH5Xyrvdz"
+      data-domain="miguelfernandez.dev"
+      src="https://datafa.st/js/script.js"></script>
+  </head>
+
+  <body class="relative bg-background text-foreground">
+    <!-- Dot grid background -->
+    <div
+      class="fixed inset-0 z-[-1]"
+      style="background-image: radial-gradient(oklch(0.72 0.12 180 / 0.07) 1px, transparent 1px); background-size: 24px 24px;"
+    >
+    </div>
+    <!-- Top ambient glow -->
+    <div
+      class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_60%_40%_at_50%_-10%,var(--primary)/0.08,transparent)]"
+    >
+    </div>
+
+    <Header lang={lang} />
+    <slot />
+    <Footer lang={lang} />
+
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overscroll-behavior: none;
+      }
+    </style>
+  </body>
+</html>

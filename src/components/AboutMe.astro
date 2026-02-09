@@ -1,0 +1,54 @@
+---
+import type { Lang } from "@/i18n"
+
+interface Props {
+  lang?: Lang
+}
+
+const { lang = "en" } = Astro.props
+---
+
+<article class="flex flex-col items-center justify-center gap-8 text-muted-foreground md:flex-row">
+  <div class="[&>p]:mb-4 [&>p>strong]:text-primary [&>p>strong]:font-normal text-pretty order-2 md:order-1">
+    {lang === "es" ? (
+      <>
+        <p>
+          Soy un <strong>desarrollador frontend senior con más de 4 años de experiencia</strong> construyendo aplicaciones web y lanzando productos. Me especializo en React, Next.js, Vue y TypeScript, con un fuerte enfoque en <strong>desarrollo con IA</strong>.
+        </p>
+        <p>
+          Recientemente completé un <strong>Máster en Desarrollo de IA</strong> en BIG school, cubriendo LLMs, RAG, agentes IA, prompt engineering y creación de productos con IA en producción. He construido productos SaaS con IA usando <strong>OpenAI, Vercel AI SDK, Fal.ai y Supabase</strong> — desde mejora de fotos inmobiliarias hasta generadores de retratos estilo videojuego.
+        </p>
+        <p>
+          Actualmente lidero la implementación frontend en <strong>Token City</strong>, colaborando con equipos fullstack y backend. Antes, trabajé en el <strong>Grupo INDITEX</strong> mejorando rendimiento y mentorizando juniors. También creé y moneticé una <strong>extensión de Chrome</strong> (DeskBreak) que ayuda a trabajadores de escritorio a mantenerse sanos. Como freelance, desarrollo webs para clientes y lanzo mis propios productos.
+        </p>
+        <p>
+          Tengo un <strong>Grado en Ingeniería Informática</strong> por la Universidad de Alicante (Grupo de Alto Rendimiento Académico en inglés), con un semestre <strong>Erasmus+</strong> en la Universidad Politécnica de Cracovia estudiando Redes Neuronales e IA.
+        </p>
+      </>
+    ) : (
+      <>
+        <p>
+          I'm a <strong>senior frontend developer with 4+ years of experience</strong> building web applications and shipping products. I specialize in React, Next.js, Vue, and TypeScript, with a strong focus on <strong>AI-powered development</strong>.
+        </p>
+        <p>
+          I recently completed a <strong>Master's in AI Development</strong> at BIG school, covering LLMs, RAG, AI agents, prompt engineering, and building production AI products. I've built AI-powered SaaS products using <strong>OpenAI, Vercel AI SDK, Fal.ai, and Supabase</strong> — from real estate photo enhancement to game-style artwork generators.
+        </p>
+        <p>
+          I currently lead frontend implementation at <strong>Token City</strong>, collaborating closely with fullstack and backend teams. Previously, I worked at <strong>INDITEX Group</strong> improving performance and mentoring junior devs. I also created and monetized a <strong>Chrome extension</strong> (DeskBreak) that helps desk workers stay healthy. As a freelancer, I build client websites and ship my own products.
+        </p>
+        <p>
+          I hold a <strong>Bachelor's in Computer Engineering</strong> from Universidad de Alicante (High Academic Performance Group in English), with an <strong>Erasmus+</strong> semester at Cracow University of Technology studying Neural Networks and AI.
+        </p>
+      </>
+    )}
+  </div>
+
+  <img
+    width="200"
+    height="200"
+    src="/miguelfernandezdev.webp"
+    alt="Miguel Fernández"
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-primary/5 ring-1 ring-primary/20"
+    style="object-position: 50% 50%"
+  />
+</article>
