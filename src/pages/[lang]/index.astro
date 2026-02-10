@@ -37,12 +37,15 @@ const education = getEducation(lang)
   description={t("meta.description")}
   lang={lang}
 >
-  <main id="main-content" class="px-4">
-    <SectionContainer class="py-16 md:py-28">
-      <Hero lang={lang} />
-    </SectionContainer>
+  <main id="main-content">
+    <div class="px-4">
+      <SectionContainer class="py-16 md:py-28">
+        <Hero lang={lang} />
+      </SectionContainer>
+    </div>
 
-    <div class="space-y-20">
+    <!-- Projects -->
+    <div class="px-4 py-20">
       <SectionContainer id="projects">
         <AnimatedSection client:visible>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.projects")}</h2>
@@ -52,7 +55,10 @@ const education = getEducation(lang)
           <AnimatedProjects client:visible projects={serializedProjects} />
         </div>
       </SectionContainer>
+    </div>
 
+    <!-- Open Source — tinted band -->
+    <div class="px-4 py-20 bg-muted/30 border-y border-border/30">
       <SectionContainer id="open-source">
         <AnimatedSection client:visible>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.opensource")}</h2>
@@ -62,7 +68,10 @@ const education = getEducation(lang)
           <OpenSource lang={lang} />
         </div>
       </SectionContainer>
+    </div>
 
+    <!-- Experience -->
+    <div class="px-4 py-20">
       <SectionContainer id="experience">
         <AnimatedSection client:visible>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.experience")}</h2>
@@ -72,7 +81,10 @@ const education = getEducation(lang)
           <AnimatedExperience client:visible experience={experience} connectorText={t("connector.at")} />
         </div>
       </SectionContainer>
+    </div>
 
+    <!-- Education — tinted band -->
+    <div class="px-4 py-20 bg-muted/30 border-y border-border/30">
       <SectionContainer id="education">
         <AnimatedSection client:visible>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.education")}</h2>
@@ -82,7 +94,10 @@ const education = getEducation(lang)
           <AnimatedEducation client:visible education={education} connectorText={t("connector.at")} />
         </div>
       </SectionContainer>
+    </div>
 
+    <!-- About -->
+    <div class="px-4 py-20">
       <SectionContainer id="about-me">
         <AnimatedSection client:visible>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.about")}</h2>
@@ -92,7 +107,10 @@ const education = getEducation(lang)
           <AboutMe lang={lang} />
         </div>
       </SectionContainer>
+    </div>
 
+    <!-- Contact — teal tinted band -->
+    <div class="px-4 py-20 bg-[oklch(0.72_0.12_180/0.04)] border-y border-primary/10">
       <SectionContainer id="contact">
         <AnimatedSection client:visible>
           <h2 class="text-3xl font-bold text-foreground tracking-tight text-center">{t("section.contact")}</h2>
