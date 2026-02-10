@@ -31,7 +31,7 @@ const experience: Record<Lang, ExperienceEntry[]> = {
       title: "Freelance Web Developer",
       company: "Self-employed",
       description:
-        "Shipping AI-powered SaaS products, client websites, and a monetized Chrome extension. Projects include Healthspan, PhotoHouseAI, Game Portrait, DeskBreak, Centro Dharma, and Vibe Coding Platform.",
+        "Shipping AI-powered SaaS products, client websites, and a monetized Chrome extension. Projects include Healthspan, PhotoHouseAI, Game Portrait, DeskBreak, Centro Dharma, and FotoCV.",
     },
     {
       date: "Feb 2023–Jun 2024",
@@ -72,7 +72,7 @@ const experience: Record<Lang, ExperienceEntry[]> = {
       title: "Desarrollador Web Freelance",
       company: "Autónomo",
       description:
-        "Desarrollando productos SaaS con IA, webs para clientes y una extensión de Chrome monetizada. Proyectos: Healthspan, PhotoHouseAI, Game Portrait, DeskBreak, Centro Dharma y Vibe Coding Platform.",
+        "Desarrollando productos SaaS con IA, webs para clientes y una extensión de Chrome monetizada. Proyectos: Healthspan, PhotoHouseAI, Game Portrait, DeskBreak, Centro Dharma y FotoCV.",
     },
     {
       date: "Feb 2023–Jun 2024",

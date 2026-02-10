@@ -7,7 +7,7 @@ import AstroIcon from "@/components/icons/AstroIcon.astro";
 import ChromeIcon from "@/components/icons/Chrome.astro";
 import AIIcon from "@/components/icons/AI.astro";
 import ViteIcon from "@/components/icons/Vite.astro";
-import ZustandIcon from "@/components/icons/Zustand.astro";
+
 import ReactNativeIcon from "@/components/icons/ReactNative.astro";
 import type { Lang } from "../ui";
 
@@ -63,11 +63,7 @@ const TAGS: Record<string, Tag> = {
     class: "bg-violet-950/80 text-violet-300 border border-violet-800/50",
     icon: ViteIcon,
   },
-  ZUSTAND: {
-    name: "Zustand",
-    class: "bg-amber-950/80 text-amber-300 border border-amber-800/50",
-    icon: ZustandIcon,
-  },
+
   REACT_NATIVE: {
     name: "React Native",
     class: "bg-sky-950/80 text-sky-300 border border-sky-800/50",
@@ -160,27 +156,27 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
     {
       base: {
         title: "Centro Dharma",
-        link: "https://centrodharma.es",
+        link: undefined,
         github: null,
         image: "/projects/centro-dharma.webp",
         tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
       },
       descriptions: {
-        en: "Live client website for a psychology center. Built as a performant, accessible static site with smooth animations and a professional design.",
-        es: "Web en producción para un centro de psicología. Construida como sitio estático de alto rendimiento, accesible, con animaciones fluidas y diseño profesional.",
+        en: "Client website for a psychology center in Alicante. Astro 5 islands architecture, JSON-LD structured data, sitemap generation, and GDPR-compliant cookie consent.",
+        es: "Web para un centro de psicología en Alicante. Arquitectura Astro 5 islands, datos estructurados JSON-LD, generación de sitemap y consentimiento de cookies GDPR.",
       },
     },
     {
       base: {
-        title: "Vibe Coding Platform",
-        link: undefined,
+        title: "FotoCV",
+        link: "https://fotocv.es",
         github: null,
-        image: "/projects/vibe-coding.webp",
-        tags: [TAGS.NEXT, TAGS.AI, TAGS.ZUSTAND, TAGS.TYPESCRIPT],
+        image: "/projects/fotocv.webp",
+        tags: [TAGS.NEXT, TAGS.AI, TAGS.TYPESCRIPT, TAGS.TAILWIND],
       },
       descriptions: {
-        en: "AI-powered web IDE scoring 9/10 on code quality. Features real-time AI code assistance, intelligent suggestions, and a modern development environment.",
-        es: "IDE web con IA que obtiene 9/10 en calidad de código. Incluye asistencia de código con IA en tiempo real, sugerencias inteligentes y un entorno de desarrollo moderno.",
+        en: "AI-powered professional headshot generator for CVs and LinkedIn. Stripe payments, Astria AI for photo generation, and 10 server actions handling the full pipeline.",
+        es: "Generador de fotos profesionales con IA para CVs y LinkedIn. Pagos con Stripe, Astria AI para generación de fotos y 10 server actions gestionando todo el pipeline.",
       },
     },
     {
