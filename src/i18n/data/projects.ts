@@ -10,6 +10,7 @@ import ViteIcon from "@/components/icons/Vite.astro";
 
 import JavaScriptIcon from "@/components/icons/JavaScript.astro";
 import ReactNativeIcon from "@/components/icons/ReactNative.astro";
+import NodeJSIcon from "@/components/icons/NodeJS.astro";
 import type { Lang } from "../ui";
 
 interface Tag {
@@ -75,6 +76,11 @@ const TAGS: Record<string, Tag> = {
     class: "bg-sky-950/80 text-sky-300 border border-sky-800/50",
     icon: ReactNativeIcon,
   },
+  NODE: {
+    name: "Node.js",
+    class: "bg-green-950/80 text-green-300 border border-green-800/50",
+    icon: NodeJSIcon,
+  },
 };
 
 export interface Project {
@@ -113,6 +119,7 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
           TAGS.SUPABASE,
           TAGS.TYPESCRIPT,
           TAGS.TAILWIND,
+          TAGS.AI,
         ],
       },
       descriptions: {
@@ -139,7 +146,7 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
         link: "https://housephotoai.com",
         github: null,
         image: "/projects/photohouseai.webp",
-        tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+        tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.AI],
       },
       descriptions: {
         en: "AI real estate photo enhancement platform with 211 components and 16 database models. Transforms property photos using AI for professional real estate listings.",
@@ -152,7 +159,7 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
         link: "https://gameportrait.com",
         github: null,
         image: "/projects/game-portrait.webp",
-        tags: [TAGS.NEXT, TAGS.SUPABASE, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+        tags: [TAGS.NEXT, TAGS.SUPABASE, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.AI],
       },
       descriptions: {
         en: "AI game-style artwork generator integrating 7 AI providers with payments. Users upload photos and receive custom game-inspired portraits powered by multiple AI models.",
@@ -230,7 +237,7 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
         link: "http://hdl.handle.net/10045/121389",
         github: null,
         image: "/projects/band-finder.webp",
-        tags: [TAGS.REACT_NATIVE],
+        tags: [TAGS.REACT_NATIVE, TAGS.NODE, TAGS.TYPESCRIPT],
       },
       descriptions: {
         en: "University thesis project (grade: 10/10, candidate for Honours) — a social network for musicians to find band members, jam sessions, and collaborations based on proximity and musical interests.",
