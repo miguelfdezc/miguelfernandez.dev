@@ -64,6 +64,8 @@ const navItems = [
         id="mobile-menu-btn"
         class="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
         aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
       >
         <svg id="menu-icon" class="size-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -111,9 +113,10 @@ const navItems = [
       if (!mobileMenuBtn) return
 
       mobileMenuBtn.addEventListener("click", function() {
-        mobileMenu.classList.toggle("hidden")
+        var isOpen = mobileMenu.classList.toggle("hidden") === false
         menuIcon.classList.toggle("hidden")
         closeIcon.classList.toggle("hidden")
+        mobileMenuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false")
       })
 
       document.querySelectorAll(".mobile-nav-link").forEach(function(link) {
@@ -121,6 +124,7 @@ const navItems = [
           mobileMenu.classList.add("hidden")
           menuIcon.classList.remove("hidden")
           closeIcon.classList.add("hidden")
+          mobileMenuBtn.setAttribute("aria-expanded", "false")
         })
       })
     }

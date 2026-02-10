@@ -23,6 +23,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const alternateLang = lang === "en" ? "es" : "en"
 const currentPath = Astro.url.pathname.split("/").slice(2).join("/")
 const alternateURL = new URL(`/${alternateLang}/${currentPath}`, Astro.site)
+
+const skipText = lang === "es" ? "Ir al contenido principal" : "Skip to main content"
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Miguel Fernández",
+  url: Astro.site?.toString(),
+  jobTitle: lang === "es" ? "Desarrollador Frontend Senior & Ingeniero IA" : "Senior Frontend Developer & AI Engineer",
+  sameAs: [
+    "https://github.com/miguelfdezc",
+    "https://www.linkedin.com/in/miguelfernandezdev/",
+  ],
+  knowsAbout: ["React", "TypeScript", "Next.js", "Astro", "Tailwind CSS", "AI Engineering"],
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: lang === "es" ? "Universidad" : "University",
+  },
+}
 ---
 
 <!doctype html>
@@ -31,9 +50,17 @@ const alternateURL = new URL(`/${alternateLang}/${currentPath}`, Astro.site)
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://datafa.st" />
+    <link rel="dns-prefetch" href="https://datafa.st" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Hreflang -->
     <link rel="alternate" hreflang={lang} href={canonicalURL} />
@@ -67,15 +94,27 @@ const alternateURL = new URL(`/${alternateLang}/${currentPath}`, Astro.site)
   </head>
 
   <body class="relative bg-background text-foreground">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-md focus:bg-primary focus:text-primary-foreground focus:text-sm focus:font-medium"
+    >
+      {skipText}
+    </a>
+
     <!-- Dot grid background -->
     <div
-      class="fixed inset-0 z-[-1]"
+      class="fixed inset-0 z-[-1] dark:opacity-100 opacity-60"
       style="background-image: radial-gradient(oklch(0.72 0.12 180 / 0.10) 1px, transparent 1px); background-size: 24px 24px;"
     >
     </div>
     <!-- Top ambient glow -->
     <div
-      class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_60%_40%_at_50%_-10%,var(--primary)/0.12,transparent)]"
+      class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_70%_50%_at_50%_-10%,var(--primary)/0.15,transparent)]"
+    >
+    </div>
+    <!-- Bottom warm glow -->
+    <div
+      class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_60%_30%_at_50%_110%,oklch(0.6_0.08_30/0.06),transparent)]"
     >
     </div>
 

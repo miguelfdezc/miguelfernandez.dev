@@ -50,6 +50,9 @@ export default function AnimatedProjectCard({
               alt={`${title}`}
               className="object-cover object-top w-full h-full transition-transform duration-500 group-hover:scale-[1.03]"
               loading="lazy"
+              decoding="async"
+              width={600}
+              height={featured ? 288 : 176}
               src={image}
             />
           </div>

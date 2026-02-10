@@ -6,7 +6,7 @@ export const languages = {
 export type Lang = keyof typeof languages;
 export const defaultLang: Lang = "en";
 
-export const ui: Record<Lang, Record<string, string>> = {
+export const ui = {
   en: {
     // Meta
     "meta.title": "Miguel Fernández | Senior Frontend Developer & AI Engineer",
@@ -58,6 +58,9 @@ export const ui: Record<Lang, Record<string, string>> = {
     "blog.empty.sub": "First post in the works...",
     "blog.back": "Back to blog",
     "blog.updated": "Updated:",
+
+    // Accessibility
+    "a11y.skip": "Skip to main content",
 
     // Connector words
     "connector.at": "at",
@@ -122,6 +125,9 @@ export const ui: Record<Lang, Record<string, string>> = {
     "blog.back": "Volver al blog",
     "blog.updated": "Actualizado:",
 
+    // Accessibility
+    "a11y.skip": "Ir al contenido principal",
+
     // Connector words
     "connector.at": "en",
 
@@ -130,4 +136,6 @@ export const ui: Record<Lang, Record<string, string>> = {
     "rss.description":
       "Reflexiones sobre desarrollo web, ingeniería de IA y creación de productos.",
   },
-};
+} as const satisfies Record<Lang, Record<string, string>>;
+
+export type TranslationKey = keyof (typeof ui)["en"];

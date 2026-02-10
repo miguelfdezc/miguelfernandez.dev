@@ -37,7 +37,7 @@ const education = getEducation(lang)
   description={t("meta.description")}
   lang={lang}
 >
-  <main class="px-4">
+  <main id="main-content" class="px-4">
     <SectionContainer class="py-16 md:py-28">
       <Hero lang={lang} />
     </SectionContainer>
@@ -45,7 +45,7 @@ const education = getEducation(lang)
     <div class="space-y-20">
       <SectionContainer id="projects">
         <AnimatedSection client:visible>
-          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.projects")}</h2>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_2px] shadow-primary/30"></span>{t("section.projects")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.projects.subtitle")}</p>
         </AnimatedSection>
         <div class="mt-8">
@@ -55,7 +55,7 @@ const education = getEducation(lang)
 
       <SectionContainer id="open-source">
         <AnimatedSection client:visible>
-          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.opensource")}</h2>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_2px] shadow-primary/30"></span>{t("section.opensource")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.opensource.subtitle")}</p>
         </AnimatedSection>
         <div class="mt-8">
@@ -65,7 +65,7 @@ const education = getEducation(lang)
 
       <SectionContainer id="experience">
         <AnimatedSection client:visible>
-          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.experience")}</h2>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_2px] shadow-primary/30"></span>{t("section.experience")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.experience.subtitle")}</p>
         </AnimatedSection>
         <div class="mt-8">
@@ -75,7 +75,7 @@ const education = getEducation(lang)
 
       <SectionContainer id="education">
         <AnimatedSection client:visible>
-          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.education")}</h2>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_2px] shadow-primary/30"></span>{t("section.education")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.education.subtitle")}</p>
         </AnimatedSection>
         <div class="mt-8">
@@ -85,7 +85,7 @@ const education = getEducation(lang)
 
       <SectionContainer id="about-me">
         <AnimatedSection client:visible>
-          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.about")}</h2>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_2px] shadow-primary/30"></span>{t("section.about")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.about.subtitle")}</p>
         </AnimatedSection>
         <div class="mt-8">
