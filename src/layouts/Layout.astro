@@ -6,6 +6,9 @@ import "@fontsource/geist-sans/700.css"
 import "@fontsource/geist-mono/400.css"
 import "@/styles/global.css"
 
+import font400 from "@fontsource/geist-sans/files/geist-sans-latin-400-normal.woff2?url"
+import font700 from "@fontsource/geist-sans/files/geist-sans-latin-700-normal.woff2?url"
+
 import { ViewTransitions } from "astro:transitions"
 import Header from "@/components/Header.astro"
 import Footer from "@/components/Footer.astro"
@@ -60,6 +63,10 @@ const jsonLd = {
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Font preloads -->
+    <link rel="preload" href={font400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={font700} as="font" type="font/woff2" crossorigin />
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://datafa.st" />
