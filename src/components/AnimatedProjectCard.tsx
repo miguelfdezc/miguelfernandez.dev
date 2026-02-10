@@ -38,7 +38,7 @@ export default function AnimatedProjectCard({
       className={featured ? "md:col-span-2" : ""}
     >
       <MagicCard
-        className="group h-full overflow-hidden border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20 transition-all duration-300 !rounded-xl"
+        className="group h-full overflow-hidden border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/40 transition-all duration-300 !rounded-xl"
         gradientColor="oklch(0.72 0.12 180 / 0.15)"
         gradientSize={250}
         gradientOpacity={0.6}
@@ -104,8 +104,8 @@ export default function AnimatedProjectCard({
               {tags.map((tag) => (
                 <Badge
                   key={tag.name}
-                  variant="secondary"
-                  className="text-[10px] font-normal px-1.5 py-0 h-5"
+                  variant="outline"
+                  className={`text-[10px] font-normal px-1.5 py-0 h-5 ${tag.class}`}
                 >
                   {tag.name}
                 </Badge>

@@ -11,7 +11,7 @@ export default function AnimatedExperience({ experience, connectorText = "at" }:
   return (
     <div className="relative pl-6">
       {/* Timeline line */}
-      <div className="absolute left-[7px] top-3 bottom-3 w-px bg-border" />
+      <div className="absolute left-[7px] top-3 bottom-3 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-border" />
 
       <div className="space-y-2">
         {experience.map((entry, index) => (
@@ -30,7 +30,7 @@ export default function AnimatedExperience({ experience, connectorText = "at" }:
             {/* Timeline dot */}
             <div className="absolute -left-6 top-4 w-[9px] h-[9px] rounded-full border-2 border-primary bg-background" />
 
-            <Card className="p-3 sm:p-4 border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20 transition-colors group">
+            <Card className="p-3 sm:p-4 border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/40 transition-colors group">
               <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6">
                 {/* Date */}
                 <div className="sm:w-28 shrink-0">
