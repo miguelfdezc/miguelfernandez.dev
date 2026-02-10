@@ -8,6 +8,7 @@ import AnimatedEducation from "@/components/AnimatedEducation"
 import AnimatedSection from "@/components/AnimatedSection"
 import AboutMe from "@/components/AboutMe.astro"
 import Contact from "@/components/Contact.astro"
+import OpenSource from "@/components/OpenSource.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 
 import { useTranslations, type Lang } from "@/i18n"
@@ -47,7 +48,19 @@ const education = getEducation(lang)
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.projects")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.projects.subtitle")}</p>
         </AnimatedSection>
-        <AnimatedProjects client:visible projects={serializedProjects} />
+        <div class="mt-8">
+          <AnimatedProjects client:visible projects={serializedProjects} />
+        </div>
+      </SectionContainer>
+
+      <SectionContainer id="open-source">
+        <AnimatedSection client:visible>
+          <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.opensource")}</h2>
+          <p class="mt-1 text-sm text-muted-foreground">{t("section.opensource.subtitle")}</p>
+        </AnimatedSection>
+        <div class="mt-8">
+          <OpenSource lang={lang} />
+        </div>
       </SectionContainer>
 
       <SectionContainer id="experience">
@@ -55,7 +68,9 @@ const education = getEducation(lang)
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.experience")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.experience.subtitle")}</p>
         </AnimatedSection>
-        <AnimatedExperience client:visible experience={experience} connectorText={t("connector.at")} />
+        <div class="mt-8">
+          <AnimatedExperience client:visible experience={experience} connectorText={t("connector.at")} />
+        </div>
       </SectionContainer>
 
       <SectionContainer id="education">
@@ -63,7 +78,9 @@ const education = getEducation(lang)
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.education")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.education.subtitle")}</p>
         </AnimatedSection>
-        <AnimatedEducation client:visible education={education} connectorText={t("connector.at")} />
+        <div class="mt-8">
+          <AnimatedEducation client:visible education={education} connectorText={t("connector.at")} />
+        </div>
       </SectionContainer>
 
       <SectionContainer id="about-me">
@@ -71,7 +88,9 @@ const education = getEducation(lang)
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span>{t("section.about")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.about.subtitle")}</p>
         </AnimatedSection>
-        <AboutMe lang={lang} />
+        <div class="mt-8">
+          <AboutMe lang={lang} />
+        </div>
       </SectionContainer>
 
       <SectionContainer id="contact">
@@ -79,7 +98,7 @@ const education = getEducation(lang)
           <h2 class="text-3xl font-bold text-foreground tracking-tight text-center">{t("section.contact")}</h2>
           <p class="mt-1 text-sm text-muted-foreground text-center">{t("section.contact.subtitle")}</p>
         </AnimatedSection>
-        <div class="mt-6">
+        <div class="mt-8">
           <Contact lang={lang} />
         </div>
       </SectionContainer>

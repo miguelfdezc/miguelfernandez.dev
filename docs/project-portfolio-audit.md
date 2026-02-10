@@ -452,6 +452,33 @@ You're starting a master's in AI Development. Whatever you build should serve tr
 
 healthspan, centrodharma, custom-landings, tourguideai, deskbreak, rapidlandings, game-portrait, fotocv, ai-chat-gifts, ai-travel-guide, indie-hacker-game, porfolio-dev, imgstudioai, productizedagencies, medium-clone, leadgeneratorlist, v0-open-in-v0, miguelfernandez-dev, indie-hacker-game-3d, clean-professional-online-presence, nextjs-dashboard, nextjs-blog, v0-archi-report-dalux-alternative, vibe-coding-platform, test-dev-miguel-fernandez, page-title-this-is-the-tagline-of-your-website, music-songlist
 
+### Domains (DonDominio) — Updated Feb 2026
+
+| Domain | Status | Project |
+|--------|--------|---------|
+| usehealthspan.com | Active (exp. 2027) | Healthspan |
+| deskbreak.app | Active (exp. 5 months) | DeskBreak |
+| housephotoai.com | Active (exp. 6 months) | PhotoHouseAI |
+| gameportrait.com | Active (exp. 1 month) ⚠️ | Game Portrait |
+| fotocv.es | Active (exp. 3 months) | FotoCV |
+| fotocurriculum.com | Active (exp. 3 months) | FotoCV (alt domain) |
+| fotocurriculum.es | Active (exp. 3 months) | FotoCV (alt domain) |
+| tourguideai.app | Active (exp. 4 months) | TourGuideAI |
+| customlandings.com | Active (exp. 9 months) | Custom Landings |
+| indiehackergame.com | Active (exp. 1 month) ⚠️ | Indie Hacker Game |
+| indiecourselist.com | Active (exp. 9 months) | Directify directory — courses for indie hackers |
+| nextjslandings.com | Active (exp. 9 months) | Directify directory — Next.js landing page templates |
+| leadgeneratorlist.com | Active (exp. 7 months) | LeadGeneratorList |
+| productizedagencies.com | Active (exp. 7 months) | ProductizedAgencies |
+| vercelalternatives.com | Active (exp. 7 months) | Directify directory — Vercel hosting alternatives |
+| coursebois.com | Expired (Redemption) | — |
+| landingdeveloper.com | Expired (Redemption) | — |
+| landingniches.com | Expired (Redemption) | — |
+| landingwizards.com | Expired (Redemption) | — |
+| rapidlandings.com | Expired (Redemption) | — |
+
+**⚠️ Expiring soon:** gameportrait.com (1 month), indiehackergame.com (1 month) — renew or let expire.
+
 ---
 
 *You don't need more projects. You need to make your existing work visible, land a better job, and pick ONE AI SaaS to focus on alongside your master's. The code is there. The skills are there. The gap is presentation.*

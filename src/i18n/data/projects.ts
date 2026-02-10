@@ -8,6 +8,7 @@ import ChromeIcon from "@/components/icons/Chrome.astro";
 import AIIcon from "@/components/icons/AI.astro";
 import ViteIcon from "@/components/icons/Vite.astro";
 
+import JavaScriptIcon from "@/components/icons/JavaScript.astro";
 import ReactNativeIcon from "@/components/icons/ReactNative.astro";
 import type { Lang } from "../ui";
 
@@ -64,6 +65,11 @@ const TAGS: Record<string, Tag> = {
     icon: ViteIcon,
   },
 
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-yellow-950/80 text-yellow-300 border border-yellow-800/50",
+    icon: JavaScriptIcon,
+  },
   REACT_NATIVE: {
     name: "React Native",
     class: "bg-sky-950/80 text-sky-300 border border-sky-800/50",
@@ -98,7 +104,7 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
     {
       base: {
         title: "Healthspan",
-        link: undefined,
+        link: "https://usehealthspan.com",
         github: null,
         image: "/projects/healthspan.webp",
         tags: [
@@ -130,7 +136,7 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
     {
       base: {
         title: "PhotoHouseAI",
-        link: undefined,
+        link: "https://housephotoai.com",
         github: null,
         image: "/projects/photohouseai.webp",
         tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
@@ -143,7 +149,7 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
     {
       base: {
         title: "Game Portrait",
-        link: undefined,
+        link: "https://gameportrait.com",
         github: null,
         image: "/projects/game-portrait.webp",
         tags: [TAGS.NEXT, TAGS.SUPABASE, TAGS.TYPESCRIPT, TAGS.TAILWIND],
@@ -177,6 +183,45 @@ const projectData: { base: ProjectBase; descriptions: ProjectDescriptions }[] =
       descriptions: {
         en: "AI-powered professional headshot generator for CVs and LinkedIn. Stripe payments, Astria AI for photo generation, and 10 server actions handling the full pipeline.",
         es: "Generador de fotos profesionales con IA para CVs y LinkedIn. Pagos con Stripe, Astria AI para generación de fotos y 10 server actions gestionando todo el pipeline.",
+      },
+    },
+    {
+      base: {
+        title: "TourGuideAI",
+        link: "https://tourguideai.app",
+        github: null,
+        image: "/projects/tourguideai.webp",
+        tags: [TAGS.NEXT, TAGS.AI, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+      },
+      descriptions: {
+        en: "AI travel audio guide SaaS with GPT-4o tour generation, ElevenLabs text-to-speech narration, Google Maps routing, and Stripe payments across 3 subscription tiers. 114 cities in the database.",
+        es: "SaaS de audioguías de viaje con IA usando GPT-4o para generación de tours, narración con ElevenLabs, rutas en Google Maps y pagos con Stripe en 3 planes de suscripción. 114 ciudades en la base de datos.",
+      },
+    },
+    {
+      base: {
+        title: "Custom Landings",
+        link: "https://customlandings.com",
+        github: null,
+        image: "/projects/custom-landings.webp",
+        tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+      },
+      descriptions: {
+        en: "Bilingual landing page for my freelance web development service. Astro 5 islands architecture, 14 animated sections with Framer Motion, form validation with Zod, and PostHog analytics.",
+        es: "Landing page bilingüe para mi servicio freelance de desarrollo web. Arquitectura Astro 5 islands, 14 secciones animadas con Framer Motion, validación de formularios con Zod y analítica con PostHog.",
+      },
+    },
+    {
+      base: {
+        title: "Indie Hacker Game",
+        link: "https://indiehackergame.com",
+        github: null,
+        image: "/projects/indie-hacker-game.webp",
+        tags: [TAGS.JAVASCRIPT, TAGS.VITE, TAGS.SUPABASE],
+      },
+      descriptions: {
+        en: "Startup-themed 2D platformer built with vanilla JavaScript and Canvas. Collect MRR, squash bugs, and reach Product-Market Fit. 6 playable indie hacker characters and Supabase leaderboard.",
+        es: "Plataformas 2D temático de startups con JavaScript vanilla y Canvas. Recoge MRR, aplasta bugs y alcanza el Product-Market Fit. 6 personajes indie hackers jugables y leaderboard con Supabase.",
       },
     },
     {

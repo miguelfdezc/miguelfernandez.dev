@@ -9,7 +9,7 @@ interface Props {
 
 export default function AnimatedExperience({ experience, connectorText = "at" }: Props) {
   return (
-    <div className="relative mt-6 pl-6">
+    <div className="relative pl-6">
       {/* Timeline line */}
       <div className="absolute left-[7px] top-3 bottom-3 w-px bg-border" />
 
@@ -19,7 +19,7 @@ export default function AnimatedExperience({ experience, connectorText = "at" }:
             key={entry.company + entry.date}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{
               duration: 0.35,
               delay: index * 0.06,

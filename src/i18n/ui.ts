@@ -32,6 +32,8 @@ export const ui: Record<Lang, Record<string, string>> = {
     // Section headings
     "section.projects": "Projects",
     "section.projects.subtitle": "Things I've built and shipped.",
+    "section.opensource": "Open Source",
+    "section.opensource.subtitle": "Contributions and community projects.",
     "section.experience": "Experience",
     "section.experience.subtitle": "Where I've worked and what I've done.",
     "section.education": "Education",
@@ -92,6 +94,8 @@ export const ui: Record<Lang, Record<string, string>> = {
     // Section headings
     "section.projects": "Proyectos",
     "section.projects.subtitle": "Lo que he construido y lanzado.",
+    "section.opensource": "Open Source",
+    "section.opensource.subtitle": "Contribuciones y proyectos comunitarios.",
     "section.experience": "Experiencia",
     "section.experience.subtitle": "Dónde he trabajado y qué he hecho.",
     "section.education": "Formación",

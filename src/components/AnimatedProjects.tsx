@@ -31,7 +31,7 @@ export default function AnimatedProjects({ projects }: Props) {
           image={project.image}
           tags={project.tags}
           index={index}
-          featured={index === 0}
+          featured={index === 0 || index === projects.length - 1}
         />
       ))}
     </div>
