@@ -29,7 +29,7 @@ const cvUrl = getCvPath(lang)
     <!-- Left: text content -->
     <div>
       <div class="hero-fade" style="--delay: 0s">
-        <AnimatedGradientText client:load className="mb-4 !mx-0">
+        <AnimatedGradientText client:idle className="mb-4 !mx-0">
           <span class="relative flex h-1.5 w-1.5 mr-1.5">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
             <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary"></span>
@@ -55,7 +55,7 @@ const cvUrl = getCvPath(lang)
       <div class="hero-fade flex items-center gap-3 mt-6 flex-wrap" style="--delay: 0.4s">
         <a href="mailto:miguel@miguelfernandez.dev">
           <ShimmerButton
-            client:load
+            client:idle
             shimmerColor="hsl(180 50% 70%)"
             background="oklch(0.72 0.12 180)"
             borderRadius="8px"
@@ -106,7 +106,7 @@ const cvUrl = getCvPath(lang)
 
     <!-- Right: orbiting tech icons (hidden on mobile) -->
     <div class="hidden lg:flex items-center justify-center">
-      <HeroVisual client:load />
+      <HeroVisual client:media="(min-width: 1024px)" />
     </div>
   </div>
 </div>

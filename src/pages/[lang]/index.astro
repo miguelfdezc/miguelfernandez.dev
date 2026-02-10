@@ -5,7 +5,7 @@ import Hero from "@/components/Hero.astro"
 import AnimatedProjects from "@/components/AnimatedProjects"
 import AnimatedExperience from "@/components/AnimatedExperience"
 import AnimatedEducation from "@/components/AnimatedEducation"
-import AnimatedSection from "@/components/AnimatedSection"
+import AnimatedSection from "@/components/AnimatedSection.astro"
 import AboutMe from "@/components/AboutMe.astro"
 import Contact from "@/components/Contact.astro"
 import OpenSource from "@/components/OpenSource.astro"
@@ -47,7 +47,7 @@ const education = getEducation(lang)
     <!-- Projects -->
     <div class="px-4 py-20">
       <SectionContainer id="projects">
-        <AnimatedSection client:visible>
+        <AnimatedSection>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.projects")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.projects.subtitle")}</p>
         </AnimatedSection>
@@ -60,7 +60,7 @@ const education = getEducation(lang)
     <!-- Open Source — tinted band -->
     <div class="px-4 py-20 bg-muted/30 border-y border-border/30">
       <SectionContainer id="open-source">
-        <AnimatedSection client:visible>
+        <AnimatedSection>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.opensource")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.opensource.subtitle")}</p>
         </AnimatedSection>
@@ -73,7 +73,7 @@ const education = getEducation(lang)
     <!-- Experience -->
     <div class="px-4 py-20">
       <SectionContainer id="experience">
-        <AnimatedSection client:visible>
+        <AnimatedSection>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.experience")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.experience.subtitle")}</p>
         </AnimatedSection>
@@ -86,7 +86,7 @@ const education = getEducation(lang)
     <!-- Education — tinted band -->
     <div class="px-4 py-20 bg-muted/30 border-y border-border/30">
       <SectionContainer id="education">
-        <AnimatedSection client:visible>
+        <AnimatedSection>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.education")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.education.subtitle")}</p>
         </AnimatedSection>
@@ -99,7 +99,7 @@ const education = getEducation(lang)
     <!-- About -->
     <div class="px-4 py-20">
       <SectionContainer id="about-me">
-        <AnimatedSection client:visible>
+        <AnimatedSection>
           <h2 class="text-3xl font-bold text-foreground tracking-tight flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>{t("section.about")}</h2>
           <p class="mt-1 text-sm text-muted-foreground">{t("section.about.subtitle")}</p>
         </AnimatedSection>
@@ -112,7 +112,7 @@ const education = getEducation(lang)
     <!-- Contact — teal tinted band -->
     <div class="px-4 py-20 bg-[oklch(0.72_0.12_180/0.04)] border-y border-primary/10">
       <SectionContainer id="contact">
-        <AnimatedSection client:visible>
+        <AnimatedSection>
           <h2 class="text-3xl font-bold text-foreground tracking-tight text-center">{t("section.contact")}</h2>
           <p class="mt-1 text-sm text-muted-foreground text-center">{t("section.contact.subtitle")}</p>
         </AnimatedSection>

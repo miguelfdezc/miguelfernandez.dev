@@ -1,0 +1,62 @@
+---
+interface Props {
+  class?: string
+  delay?: number
+}
+
+const { class: className, delay = 0 } = Astro.props
+---
+
+<div class:list={["animate-on-scroll", className]} style={delay ? `--anim-delay: ${delay}s` : undefined}>
+  <slot />
+</div>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition-delay: var(--anim-delay, 0s);
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  ;(function() {
+    function initScrollAnimations() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible")
+            observer.unobserve(entry.target)
+          }
+        })
+      }, { threshold: 0.1 })
+
+      document.querySelectorAll(".animate-on-scroll").forEach(function(el) {
+        if (!el.classList.contains("is-visible")) {
+          observer.observe(el)
+        }
+      })
+    }
+
+    initScrollAnimations()
+
+    if (!window.__scrollAnimListenerSet) {
+      window.__scrollAnimListenerSet = true
+      document.addEventListener("astro:after-swap", initScrollAnimations)
+    }
+  })()
+</script>
