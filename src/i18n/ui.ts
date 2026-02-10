@@ -59,6 +59,11 @@ export const ui = {
     "blog.back": "Back to blog",
     "blog.updated": "Updated:",
 
+    // 404
+    "404.title": "Page not found",
+    "404.description": "The page you're looking for doesn't exist or has been moved.",
+    "404.back": "Back to home",
+
     // Accessibility
     "a11y.skip": "Skip to main content",
 
@@ -124,6 +129,11 @@ export const ui = {
     "blog.empty.sub": "Primer artículo en camino...",
     "blog.back": "Volver al blog",
     "blog.updated": "Actualizado:",
+
+    // 404
+    "404.title": "Página no encontrada",
+    "404.description": "La página que buscas no existe o ha sido movida.",
+    "404.back": "Volver al inicio",
 
     // Accessibility
     "a11y.skip": "Ir al contenido principal",

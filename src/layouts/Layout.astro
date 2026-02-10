@@ -37,10 +37,16 @@ const jsonLd = {
     "https://www.linkedin.com/in/miguelfernandezdev/",
   ],
   knowsAbout: ["React", "TypeScript", "Next.js", "Astro", "Tailwind CSS", "AI Engineering"],
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: lang === "es" ? "Universidad" : "University",
-  },
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "Universidad de Alicante",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Cracow University of Technology",
+    },
+  ],
 }
 ---
 
@@ -49,7 +55,7 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48" />
     <link rel="canonical" href={canonicalURL} />
@@ -81,6 +87,8 @@ const jsonLd = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:creator" content="@MiguelFdezDev" />
+    <meta name="twitter:site" content="@MiguelFdezDev" />
 
     <title>{title}</title>
     <ViewTransitions />
