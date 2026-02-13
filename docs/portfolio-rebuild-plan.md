@@ -40,7 +40,6 @@
    - PhotoHouseAI — AI real estate photo enhancement, 211 components, 16 DB models (Next.js, React 19, TypeScript, Tailwind)
    - Game Portrait — AI game-style artwork, 7 AI providers, payments (Next.js, Supabase, TypeScript, Tailwind)
    - Centro Dharma — Live client psychology center website (Astro, React, Tailwind) → centrodharma.es
-   - Vibe Coding Platform — AI-powered web IDE, 9/10 code quality (Next.js 15, AI SDK, Zustand, TypeScript)
    - Band Finder — University thesis, original full-stack work (React Native) — keep as last project
 
 3. **Experience** — Timeline cards
@@ -73,7 +72,7 @@
 
 - Capture real screenshots from deployed Vercel apps
 - Save as webp in `/public/projects/`
-- Need screenshots for: Healthspan, PhotoHouseAI, Game Portrait, Centro Dharma, Vibe Coding Platform
+- Need screenshots for: Healthspan, PhotoHouseAI, Game Portrait, Centro Dharma
 - DeskBreak already has an image
 
 ---
@@ -156,7 +155,6 @@ miguelfernandez.dev/
 │   │   ├── photohouseai.webp
 │   │   ├── game-portrait.webp
 │   │   ├── centro-dharma.webp
-│   │   ├── vibe-coding.webp
 │   │   └── band-finder.webp
 │   ├── favicon.ico
 │   └── og-image.png

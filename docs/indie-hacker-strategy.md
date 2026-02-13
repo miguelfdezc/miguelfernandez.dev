@@ -54,24 +54,70 @@ Non-negotiable. The AI credential helps whether you stay indie or land a better 
 
 Keep interviewing. A salary jump from a better company is the most reliable income increase. The Master's + portfolio (Healthspan, 10 shipped projects, AI experience) makes you a strong candidate for senior/lead roles. This runs in parallel and doesn't conflict with anything.
 
-### Priority #4 (background): DeskBreak passive income
+### Priority #4: DeskBreak — untapped potential
 
-Don't invest more time building. It has paying users — let it run. The one thing worth doing: optimize the Chrome Web Store listing (screenshots, description, keywords). That's where office workers discover extensions, not Twitter. 30-minute task, then leave it alone.
+Has paying users and solves a real pain (remote workers forgetting to take breaks). Competitors like LookAway have proven the market and grown organically through Reddit posts and X. DeskBreak is an improved version of simple Pomodoro apps (12 break types, YouTube guided breaks, stats tracking).
+
+**Competitor analysis — LookAway (the benchmark):**
+- **Mac-only** desktop app — $14.99 one-time or $45 lifetime license
+- Also on **Setapp** (Netflix-of-Mac-apps, 250+ apps for one subscription, devs get 70-90% revenue share)
+- Has a **companion iOS app ("LookAway Mirror")** in beta — syncs breaks from Mac to iPhone
+- Grew organically via Reddit (r/remotework, r/productivity, r/WFH, r/ergonomics) and X
+- Can do system-level things Chrome extensions can't: force screen lock, overlay on all apps, detect meetings/screen recordings, menubar presence
+
+**Key insight: Chrome extensions are hard to monetize.** People expect them free. Desktop apps (especially Mac) have better monetization culture — $15-45 is normal for a Mac utility.
+
+**Platform strategy for DeskBreak:**
+1. **Chrome extension (keep) → Free tier / lead gen.** Already works, already has users. "Want more? Get the desktop app."
+2. **Mac desktop app (build) → Primary paid product.** $15-45 one-time or subscription. Tauri or Electron can reuse existing React code. System-level features Chrome can't do (force lock screen, overlay, meeting detection, menubar). Distribute via direct sales + **Setapp** (they handle marketing, you get 70% revenue) + Mac App Store.
+3. **iOS companion app (later) → Syncs with desktop.** Like LookAway Mirror. Vibrate phone/Apple Watch when break time. Not the primary product.
+4. **B2B team plans (later) → Web admin dashboard + desktop client.** $5-15/employee/month. Companies buy for remote teams. HR/People ops love wellness tools.
+
+**Distribution channels:**
+- Reddit organic (r/remotework, r/productivity, r/WFH, r/ergonomics) — LookAway's proven playbook
+- Setapp (Mac app subscription platform — built-in audience of Mac power users)
+- Chrome Web Store optimization (30 min task, then leave)
+- Product Hunt launch for desktop version
+- For B2B: LinkedIn outreach to HR/People ops, remote-first company directories
+
+**Not just passive income — real product with a clear path to growth.** The product is solid, the market is proven (LookAway), the monetization is clear (desktop app > Chrome extension), and the distribution channels are identified (Reddit, Setapp, direct).
 
 ### Priority #5 (on hold): FotoCV
 
 **Deprioritized.** Initially seemed like the top bet because CVPhoto.app is a proven $2K/month model. But:
-- Running costs are €400-600/month for AI processing (Astria) before any revenue
+- Users pay first, then photos are generated — so AI costs scale with revenue, not ahead of it. The old €400-600/month estimate was wrong (assumed flat Astria subscription).
+- Could switch from Astria AI to cheaper alternatives (Replicate, Fal AI, Gemini, etc.) to further reduce per-image cost
 - Low ticket price (€5-10 per photo) — needs volume
 - Emails/webhooks broken — needs fixing before it can function
 - Spanish SEO would take months to rank
 - No blog posts written yet
 
-**Not dead, just parked.** If PhotoHouseAI takes off and generates cash flow, FotoCV becomes a good second product to invest in. The proven model is real — it just needs more upfront investment than PhotoHouseAI to get running.
+**Not dead, just parked.** The cost barrier is lower than initially thought (pay-per-use, not upfront). Main blockers are broken emails/webhooks and the SEO time investment. Could be revisited as a second product without needing PhotoHouseAI cash flow to subsidize it.
+
+**B2B angle:** Instead of selling to individual job seekers (€5-10/photo, needs volume), could sell bulk packages to recruiting agencies, career coaching services, or university career departments (€50-200/month per organization). Higher ticket, fewer customers needed, businesses have budgets for this.
 
 ### Deprioritized: Everything else
 
 These are all lower priority than PhotoHouseAI. Some could become sprint candidates later (Apr-May when Master's winds down), but NOT now.
+
+---
+
+## B2B vs B2C Analysis
+
+**Key lesson from DeskBreak experience:** B2B is easier for indie hackers — higher ticket, fewer customers needed, businesses have budgets. That's why PhotoHouseAI was the right pivot. But other projects also have B2B angles worth noting.
+
+### B2B Opportunities Across All Projects
+
+| Project | Current | B2B Pivot | How | Potential Ticket |
+|---------|---------|-----------|-----|-----------------|
+| **PhotoHouseAI** | Already B2B | — | Real estate agencies | €30-50/mo per agency |
+| **DeskBreak** | B2C ($2/mo) | **Best B2B candidate** | Sell team plans to companies for employee wellness. HR/People ops buy wellness tools. Roadmap already mentions "team collaboration features." | $5-15/employee/mo |
+| **TourGuideAI** | B2C | Could be B2B | Sell to hotels, tour operators, Airbnb hosts — white-label guides for their guests | €20-50/mo per business |
+| **FotoCV** | B2C (€5-10) | Could be B2B | Sell to recruiting agencies, career coaching services, university career departments (bulk photo packages) | €50-200/mo per org |
+| **Guitar Practice Tracker** | B2C ($3/mo) | Could be B2B | Sell to music schools, guitar teachers (track student progress, assign practice) | €10-30/mo per teacher |
+| **Healthspan** | B2C ($8-15/mo) | Don't force it | Couple/family focus is the differentiator. Corporate wellness would need a separate product — the intimate couple features don't translate to coworkers. | Stay B2C |
+
+**DeskBreak B2B is the sleeper hit.** Companies already pay for employee wellness programs. "Keep your remote team healthy" is an easy sell to HR/People ops. And the product already works — it just needs a team dashboard, admin features, and company billing. The B2C extension could be the free tier that feeds the B2B funnel.
 
 ---
 
@@ -82,27 +128,31 @@ These are all lower priority than PhotoHouseAI. Some could become sprint candida
 |---------|--------|-----|
 | **PhotoHouseAI** | MVP sprint → local sales in El Campello | B2B, local advantage, high ticket, free distribution |
 
-### Keep Running (zero time investment)
+### Real Business Candidates (need distribution strategy)
 | Project | Status | Notes |
 |---------|--------|-------|
-| **DeskBreak Chrome** | Passive income | 5-6 paid users, couple yearly subs. Optimize Web Store listing (30 min), then hands off. |
-| **Healthspan** | Portfolio flagship | Best portfolio piece (1,475 tests, full SaaS). Don't touch, just showcase in interviews. |
+| **DeskBreak Chrome** | Real business candidate | 5-6 paid users, couple yearly subs. Product is solid (12 break types, guided breaks, stats). LookAway proved the market grows via Reddit/organic. Needs: Chrome Web Store optimization + Reddit/community marketing. Desktop or mobile version could expand reach. Distribution was the missing piece, not the product. **B2B pivot potential — see B2B analysis above.** |
+| **Healthspan** | Real business candidate | Most complete product (1,492 tests, 95% coverage, mobile ready). "Duolingo of longevity" vision — daily protocol, streaks, gamification, couples focus. Spanish-first in a growing biohacking/longevity market (Marcos Vazquez, RealFooding proved demand). $8-15/month pricing. Nutrition module 80% done, 6 more modules planned. Distribution is the challenge — needs App Store optimization, content marketing, community building. |
+| **FotoCV** | Fixable MVP | Proven model (CVPhoto = €2K/mo). Pay-per-use costs scale with revenue. Needs email/webhook fix. **B2B angle: sell to recruiting agencies/career services instead of individual job seekers (€50-200/mo per org).** |
+
+### Keep Running (delivered / done)
+| Project | Status | Notes |
+|---------|--------|-------|
 | **Centro Dharma** | Delivered | Live client site. Done. |
 | **Band Finder** | Portfolio | University thesis. Public repo for interviews. |
 | **Portfolio site** | Live | miguelfernandez.dev on Astro 5. Already great. Visual overhaul plan exists for later polish. |
+| **Indie Hacker Game** | Done | Already launched on X during vibe coding wave (pre-Claude Code era). Has leaderboard ranking + score sharing via Supabase (likely paused for inactivity on free tier). Had its moment. |
 
 ### Sprint Candidates (Apr-May, after Master's lightens)
 | Project | Sprint effort | Potential | Notes |
 |---------|--------------|-----------|-------|
-| **TourGuideAI** | 3-5 days | Seasonal (summer) | 114 cities, Stripe works. Launch on Product Hunt before June. |
-| **Guitar Practice Tracker** | 3-5 days | Niche SaaS | From Notion ideas (8.5 points). Personal passion, $3/month, loyal niche. |
-| **Indie Hacker Game** | 1 day (just launch) | Brand building | Already built. Post on indie hacker communities. |
-| **Vibe Coding Platform** | 3-5 days | Hot market | Add auth + payments. But competing with giants (Cursor, Bolt, etc.) |
+| **TourGuideAI** | 3-5 days | Seasonal (summer) | 114 cities, Stripe works. Launch on Product Hunt before June. **B2B angle: sell to hotels/tour operators/Airbnb hosts as white-label guides (€20-50/mo).** |
+| **vuejs.wiki** | 1 weekend | Brand/audience | 30 Q&As written, zero competition in Spanish Vue space. Compounds into career positioning. |
+| **Guitar Practice Tracker** | 3-5 days | Niche SaaS | From Notion ideas (8.5 points). Personal passion, $3/month, loyal niche. **B2B angle: sell to music schools/guitar teachers (€10-30/mo per teacher).** |
 
-### On Hold (revisit if PhotoHouseAI generates cash)
+### On Hold
 | Project | Why on hold |
 |---------|-------------|
-| **FotoCV** | High running costs, broken emails, needs SEO months to rank. Good model but needs investment. |
 | **SEO Directories** (5 on Directify) | Fix SSL when Directify resolves it. Passive content play. Not urgent. |
 
 ### Investigate Later
@@ -118,7 +168,6 @@ These are all lower priority than PhotoHouseAI. Some could become sprint candida
 | ImgStudioAI | Redundant with PhotoHouseAI. |
 | LaunchTone | No clear path to revenue. |
 | AI Branding | Too generic. |
-| DeskBreak Desktop/Mobile/VSCode | Don't expand what isn't growing. |
 | Flight Tracker | Hobby project, no market. |
 | Car Calculator/Comparator | Too generic, no monetization. |
 | Food Comparator/NutritionPal/FoodMaps | Zero code, too competitive. |
@@ -128,6 +177,7 @@ These are all lower priority than PhotoHouseAI. Some could become sprint candida
 | v0 for React Native / Remix | Competing with well-funded companies. |
 | Viber3D | No clear market. |
 | More directory ideas | Already have 5+. |
+| Vibe Coding Platform | Vercel CLI fork. Not original work. |
 
 ### Notion Ideas — Worth considering later
 | Idea | Score | Notes |
@@ -135,9 +185,29 @@ These are all lower priority than PhotoHouseAI. Some could become sprint candida
 | **Guitar Practice Tracker** | 8.5 | Sprint candidate for Apr-May |
 | **Supermarket Prices Comparison** | — | Spain-specific, SEO potential ("comparador precios supermercado") |
 | **CPR Songs** | — | Niche but interesting |
-| **Custom Mobile Apps for SMB** | — | Productized service play |
+| **Custom Mobile Apps for SMB** | — | Productized service play (B2B by nature) |
+| **Interview Prep SaaS** | — | Big scope, needs validation. Price-sensitive B2C users. |
 
 Everything else in the 50+ Notion ideas: too early, too niche, or already done better by someone else.
+
+---
+
+## Master Ranking (Feb 2026)
+
+Ranked by: revenue potential × distribution clarity × current readiness. B2B projects weighted higher (indie hacker lesson: B2B > B2C for starting out).
+
+| # | Project | Model | Ticket | Distribution | Status |
+|---|---------|-------|--------|-------------|--------|
+| 1 | **PhotoHouseAI** | B2B | €30-50/mo per agency | Walk into offices (free, local) | MVP sprint active |
+| 2 | **DeskBreak** (B2B pivot) | B2B | $5-15/employee/mo | LinkedIn outreach to HR, Reddit organic, Chrome Web Store | Product ready, needs team features + marketing |
+| 3 | **Healthspan** | B2C | $8-15/mo | App Store, content marketing, biohacking communities | Most complete product (1,492 tests, mobile ready), needs distribution |
+| 4 | **FotoCV** | B2C → B2B | €5-10/photo or €50-200/mo per org | Spanish SEO, or sell to recruiting agencies | Pay-per-use costs, needs email/webhook fix |
+| 5 | **TourGuideAI** | B2C → B2B | €20-50/mo per hotel | Product Hunt, or sell to hotels/tour operators | 90% done, seasonal summer window |
+| 6 | **vuejs.wiki** | Brand/audience | — | Dev communities, meetups | 1 weekend MVP, zero competition |
+| 7 | **Guitar Practice Tracker** | B2C → B2B | $3/mo or €10-30/mo per school | Niche communities, music schools | Passion project, loyal niche |
+| 8 | **Supermarket Prices** | SEO/affiliate | — | Spanish SEO | Concept, needs scraping |
+| 9 | **Interview Prep SaaS** | B2C | — | Needs validation | Big scope, price-sensitive users |
+| 10 | **Custom Mobile Apps** | B2B service | Per-project | Direct sales | Real money but trades time for money |
 
 ---
 
@@ -184,7 +254,7 @@ Everything else in the 50+ Notion ideas: too early, too niche, or already done b
 | **fotocurriculum.com** | Renew | On hold but don't lose the domain |
 | **fotocurriculum.es** | Renew | On hold but don't lose the domain |
 | **deskbreak.app** | Keep | Passive income |
-| **usehealthspan.com** | Keep (2027) | Portfolio flagship |
+| **usehealthspan.com** | **KEEP** (2027) | Real business candidate — longevity/biohacking platform |
 | **tourguideai.app** | Keep | Sprint candidate before summer |
 | **nextjslandings.com** | Keep, fix SSL | Directify issue |
 | **indiecourselist.com** | Keep, fix SSL | Directify issue |
@@ -202,7 +272,7 @@ Everything else in the 50+ Notion ideas: too early, too niche, or already done b
 - **PhotoHouseAI:** 1-2 weekends — set up Stripe, credits, deploy with Claude Code
 - **PhotoHouseAI:** Create 5-10 before/after examples from Idealista El Campello listings
 - **PhotoHouseAI:** Walk into first 5 real estate offices
-- **DeskBreak:** One 30-min session to optimize Chrome Web Store listing
+- **DeskBreak:** Optimize Chrome Web Store listing (30 min). Research LookAway's Reddit strategy for organic growth ideas.
 - **Quick:** Fix directory SSL if Directify resolves the issue
 
 ### April-May (Master's winding down + PhotoHouseAI growth + first sprint)
@@ -213,9 +283,9 @@ Everything else in the 50+ Notion ideas: too early, too niche, or already done b
 
 ### June-July (More time available)
 - **PhotoHouseAI:** Scale if working. Benidorm, Torrevieja, rest of coast.
-- **Sprint 2:** Guitar Practice Tracker or Vibe Coding Platform
+- **Sprint 2:** Guitar Practice Tracker
 - **Master's final project:** Use as next product if possible
-- **FotoCV:** Consider fixing if PhotoHouseAI is generating cash to cover running costs
+- **FotoCV:** Consider fixing (broken emails/webhooks). Costs are pay-per-use so no upfront investment needed beyond dev time.
 
 ### August-September (Decision time)
 - **Hard look at the numbers.** Is PhotoHouseAI making €300+/month?
@@ -246,6 +316,6 @@ Everything else in the 50+ Notion ideas: too early, too niche, or already done b
 
 PhotoHouseAI + walking into El Campello real estate offices. That's the play.
 
-Everything else is secondary: Master's runs in parallel (non-negotiable), job interviews continue (safety net), DeskBreak collects passive income, other projects wait their turn.
+Everything else is secondary: Master's runs in parallel (non-negotiable), job interviews continue (safety net), DeskBreak and Healthspan have real potential but need distribution strategy, other projects wait their turn.
 
 If 8 months of selling to local real estate agents doesn't work, drop autonomo knowing you finally tried the right approach — not more building, not Twitter, not paid tools — but actually talking to customers who have money and a problem you solve.

@@ -65,8 +65,7 @@
 
 2. **More Projects** (smaller cards):
    - FotoCV - AI CV photos
-   - Vibe Coding Platform - AI coding IDE
-   - Game Portrait or FotoCV (whichever isn't featured above)
+   - Game Portrait - AI game-style artwork
    - Band Finder - University TFG, original full-stack work
 
 3. **Technical Writing / OSS** (brief section):
@@ -86,24 +85,22 @@
 ### S-Tier - Real Shipped Products
 
 #### 1. Healthspan (couple-cuisine)
-- **What:** Full SaaS for meal planning, recipes, nutrition tracking
+- **What:** Holistic health & longevity platform for couples/families — "the Duolingo of longevity"
 - **Stack:** React 18, Vite, Supabase (auth + DB + edge functions + storage), Tailwind, Polar.sh payments, Capacitor mobile
-- **Honest context:** Built in ~2 weeks with Claude Code / Opus 4.5. The code quality, testing, and architecture are genuinely excellent. But the story is "I'm very effective with AI tools" not "I struggled through months of engineering."
-- **Why still S-Tier:**
-  - 1,475+ unit/integration tests (Vitest + React Testing Library)
-  - 23 Playwright E2E test files with axe-core accessibility testing
-  - Full CI/CD: GitHub Actions (lint, typecheck, test, build, Lighthouse, security audit)
-  - AI features: recipe generation, ingredient generation, voice input
-  - Payments (Polar.sh), Sentry monitoring, GDPR compliance
-  - 100+ components organized by feature
-  - **Frame it as:** "I can ship production-quality software extremely fast using AI-assisted development"
+- **Vision:** Daily longevity protocol inspired by Marcos Vazquez (Fitness Revolucionario), Peter Attia, Bryan Johnson (Don't Die). 7 planned modules: nutrition, body metrics, sleep, habits, self-care, quizzes, fitness. Gamification with streaks and health points.
+- **Unique angle:** Couple/family focus (nobody else does this — MyFitnessPal, CalAI, MacroFactor are all individual). Spanish-first in a market where RealFooding proved massive demand.
+- **Current state:** Nutrition module 80% complete. 1,492 unit/integration tests, 23 Playwright E2E, 95% code coverage. iOS TestFlight + Android builds ready. Fully bilingual (EN/ES).
+- **Business potential:** $8-15/month pricing. Growing biohacking/longevity trend. Distribution is the main challenge — needs App Store optimization, content marketing, community building.
+- **Honest context:** Built in ~2 weeks with Claude Code / Opus 4.5. The code quality, testing, and architecture are genuinely excellent. Story is "I can ship production-quality software extremely fast using AI-assisted development."
+- **S-Tier as portfolio AND real business candidate.**
 - **GitHub:** Private
 - **Deployed:** Vercel (healthspan)
 
 #### 2. DeskBreak Chrome Extension
 - **What:** Break reminder Chrome extension with 12 break types, monetized
 - **Stack:** React + Chrome APIs (alarms, storage, notifications, offscreen) + Tailwind
-- **Honest context:** This is your most authentic engineering work. You spent real time on it, solved real Chrome API problems, monetized it (some revenue), and iterated based on user feedback. The desktop/mobile/VSCode repos exist but are early experiments, not finished products. The "website" is a landing page.
+- **Honest context:** Most authentic engineering work. Own idea, own code, real Chrome API problems solved, monetized with real users, iterated based on feedback. Desktop/mobile/VSCode repos are early experiments, not finished.
+- **Market validation:** LookAway proved the market — grew organically via Reddit and X. Remote workers genuinely forget to take breaks. DeskBreak is an improved Pomodoro with guided breaks, YouTube integration, 12 break types.
 - **Why S-Tier:**
   - Your own idea, your own code, your own struggles
   - 12 break types (stretch, eye rest, breathing, etc.)
@@ -113,6 +110,9 @@
   - Monetized product with real users
   - Chrome Extension APIs are a niche skill that not many devs have
   - **DO NOT claim "5 platforms"** - be honest about what's shipped vs experiments
+- **Untapped potential:** Product is solid, distribution was the missing piece. LookAway (Mac-only, $15-45) proved the market and grew via Reddit organic posts. Chrome extensions are hard to monetize — desktop apps have better monetization culture.
+- **Platform strategy:** Chrome extension (free/lead gen) → Mac desktop app (paid, $15-45, via Setapp + Mac App Store) → iOS companion (syncs breaks, like LookAway Mirror) → B2B team plans ($5-15/employee/mo for companies).
+- **Real business candidate, not just passive income.**
 - **GitHub:** Private
 - **Deployed:** Vercel (landing page), Chrome Web Store (extension)
 
@@ -164,22 +164,6 @@
 - **GitHub:** Private
 - **Deployed:** Vercel (game-portrait)
 
-#### 6. Vibe Coding Platform
-- **What:** AI-powered web development IDE (like a mini v0/Bolt)
-- **Stack:** Next.js 15 (Turbopack), Vercel AI SDK (OpenAI, Vercel, Anthropic models), Vercel Sandbox, Zustand, SWR
-- **Deep dive findings:**
-  - Best code quality of all your projects (9/10)
-  - 53 well-organized components (chat, file-explorer, commands-logs, preview, model-selector)
-  - Sophisticated multi-store Zustand architecture (sandbox lifecycle, file explorer, error monitoring)
-  - 137-line AI system prompt with detailed code generation instructions
-  - Streaming AI responses with tool execution
-  - Resizable panel layout (professional IDE feel)
-  - 89-line CLAUDE.md with architecture documentation
-  - Mobile-responsive with tab-based interface
-- **Honest context:** No auth, no payments, no persistence (ephemeral sandboxes). It's a polished prototype/demo, not a monetized product.
-- **GitHub:** Private
-- **Deployed:** Vercel (vibe-coding-platform)
-
 ### B-Tier - Supporting Projects
 
 | Project | Stack | Honest Assessment |
@@ -188,7 +172,7 @@
 | **Band Finder (TFG)** | JavaScript (3 repos: API + App + Backoffice) | Your university degree thesis. Original full-stack work, no AI assistance. Shows foundational engineering. Public repos. Old (2021-2023) but honest. |
 | **Custom Landings** | Astro 5, React islands, i18n | Clean landing page for your design service. Good code quality, small codebase. |
 | **TourGuideAI** | Next.js, Firebase, Stripe | AI travel guide. Multiple versions built. Had some traction. |
-| **Indie Hacker Game** | Phaser + Three.js | Fun 2D platformer + 3D version. Good conversation starter. |
+| **Indie Hacker Game** | Phaser + Three.js, Supabase | Already launched on X during vibe coding wave (pre-Claude Code). Has leaderboard ranking + score sharing via Supabase (likely paused for inactivity on free tier). Had its moment. |
 | **FitChef** | Expo, React Native | Recipe/nutrition mobile app. |
 | **Music Songlist** | React, Tailwind | Personal passion project. |
 | **fullstack-assignment** | TypeScript | **PUBLIC (2 stars).** Completed fullstack hiring assessment. One of your best public repos. |
@@ -236,8 +220,7 @@ You're not looking for any job - you're trying to escape a plateau. The pitch is
 | 1 | **DeskBreak Extension** | Chrome API expertise, React in constrained environments, onboarding flows, real monetized product |
 | 2 | **Healthspan** | Testing culture (1,475 tests), component architecture, React Hook Form + Zod, accessibility (axe-core), performance (Lighthouse CI) |
 | 3 | **Centro Dharma** | Production client site, Astro 5 islands, SEO, GDPR, real constraints |
-| 4 | **Vibe Coding Platform** | Best code quality (9/10), sophisticated state management (Zustand), streaming AI, modern React patterns |
-| 5 | **Custom Landings** | Clean Astro 5 + React islands, i18n, small readable codebase |
+| 4 | **Custom Landings** | Clean Astro 5 + React islands, i18n, small readable codebase |
 
 **Key talking points:**
 - "I built and monetized a Chrome extension - 12 break types, onboarding wizard, YouTube integration"
@@ -280,7 +263,6 @@ You're starting a master's in AI Development. Whatever you build should serve tr
 
 - Healthspan already has AI - could you expand it into a proper health/wellness AI platform? (Break reminders from DeskBreak + meal planning + fitness tracking)
 - Something from your master's coursework that solves a real problem
-- An AI tool for developers (you've already built Vibe Coding Platform - that space is hot)
 - An AI tool for a specific industry you know (construction from ObraGest? music from your guitar/songlist projects?)
 
 **Key principle:** Don't build a new product just to have a new product. Build something where you have a distribution advantage or domain expertise.
@@ -350,7 +332,7 @@ You're starting a master's in AI Development. Whatever you build should serve tr
 | "Show me modern React" | PhotoHouseAI (React 19, App Router) |
 | "Show me production code" | Centro Dharma (centrodharma.es) |
 | "Show me AI integration" | Game Portrait (7 AI providers) or Healthspan (AI edge functions) |
-| "Show me state management" | Vibe Coding Platform (Zustand multi-store, 9/10 code quality) |
+| "Show me state management" | Healthspan (complex form state, React Hook Form + Zod) or PhotoHouseAI (multi-package monorepo) |
 
 ### Numbers to Know
 
@@ -412,13 +394,13 @@ You're starting a master's in AI Development. Whatever you build should serve tr
 
 | Project | Stack | Last Active | GitHub | Vercel | Status |
 |---------|-------|-------------|--------|--------|--------|
-| Healthspan | React, Vite, Supabase, Polar.sh | 2026-02-06 | Private | Yes | S-Tier. Complete SaaS. AI-built in 2 weeks. |
-| DeskBreak Extension | React, Chrome APIs | 2025-10-17 | Private | - | S-Tier. Monetized. Your authentic work. |
+| Healthspan | React, Vite, Supabase, Polar.sh, Capacitor | 2026-02-06 | Private | Yes | S-Tier. Complete SaaS + real business candidate. "Duolingo of longevity" for couples. 1,492 tests, 95% coverage, mobile ready. $8-15/mo. |
+| DeskBreak Extension | React, Chrome APIs | 2025-10-17 | Private | - | S-Tier. Monetized. Your authentic work. Real business candidate — LookAway proved market, needs Reddit/community marketing. |
 | DeskBreak Landing | Next.js, Firebase, Stripe | 2025-11-22 | Private | Yes | Landing page for the extension. |
 | Centro Dharma | Astro 5, React islands | 2025-12-15 | Private | Yes | S-Tier. Live client site. |
 | PhotoHouseAI | Turborepo, Next.js, React 19, Prisma | 2025-12-09 | Private | - | A-Tier. 211 components, 16 DB models. Supastarter-based. |
 | Game Portrait | Next.js 14, Supabase, 7 AI providers | 2025-11-10 | Private | Yes | A-Tier. Full SaaS with payments. |
-| Vibe Coding Platform | Next.js 15, AI SDK, Vercel Sandbox | 2025-09-22 | Private | Yes | A-Tier. Best code quality (9/10). Prototype. |
+| Vibe Coding Platform | Next.js 15, AI SDK, Vercel Sandbox | 2025-09-22 | Private | Yes | **Not original work.** Vercel CLI scaffold/fork. Don't showcase. |
 | FotoCV | Next.js 15, Stripe, Astria AI | 2025-12-09 | Private | Yes | B-Tier. Working MVP. No tests. |
 | Band Finder (3 repos) | JavaScript (API+App+Backoffice) | 2023-03-07 | **Public** | - | B-Tier. University TFG. Original work. |
 | fullstack-assignment | TypeScript | 2023-01-23 | **Public (2★)** | - | B-Tier. Completed tech assessment. |
@@ -426,7 +408,7 @@ You're starting a master's in AI Development. Whatever you build should serve tr
 | Test Dev (Agile Monkeys) | JavaScript | 2024-05-26 | Private | - | B-Tier. Frontend tech assessment. |
 | Custom Landings | Astro 5, React, i18n | 2025-12-15 | Private | Yes | B-Tier. Clean code. |
 | TourGuideAI | Next.js, Firebase, Stripe | 2025-11-07 | Private | Yes | B-Tier. AI travel guide. |
-| Indie Hacker Game | Phaser, Three.js | 2025-11-10 | Private | Yes | B-Tier. Fun. Make public. |
+| Indie Hacker Game | Phaser, Three.js, Supabase | 2025-11-10 | Private | Yes | B-Tier. Already launched on X. Leaderboard + sharing. Supabase likely paused. |
 | Vitest Docs ES | TypeScript | 2024-02-19 | **Public (2★)** | - | B-Tier. Your OSS initiative. |
 | Music Songlist | React | 2025-07-30 | Private | Yes | B-Tier. Personal project. |
 | FitChef | Expo, React Native | 2025-04-28 | Private | - | B-Tier. Mobile app. |

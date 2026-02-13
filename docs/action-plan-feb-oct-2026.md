@@ -28,7 +28,9 @@
 - [ ] **Walk into first 3-5 real estate offices in El Campello**
   - Script: "Hey, I live here in El Campello, I'm a developer. I built a tool that improves property photos with AI. Here's what it does — want to try it free?"
 - [ ] Offer 10 free photos per interested agency — collect feedback
-- [ ] DeskBreak: 30 min optimizing Chrome Web Store listing (screenshots, description, keywords). Once, done.
+- [ ] DeskBreak: 30 min optimizing Chrome Web Store listing (screenshots, description, keywords)
+- [ ] DeskBreak: Research LookAway's Reddit growth strategy — check r/remotework, r/productivity, r/WFH, r/ergonomics for organic posting patterns
+- [ ] DeskBreak: Evaluate B2B pivot — team plans for companies (HR/People ops buy wellness tools). Scope: team dashboard, admin features, company billing. $5-15/employee/month.
 - [ ] Fix directory SSL certs if Directify has resolved the DNS issue
 
 ## March
@@ -54,16 +56,16 @@
 
 - [ ] PhotoHouseAI: continue Alicante expansion
 - [ ] Evaluate: how many paying agencies? Is MRR growing?
-- [ ] Sprint 2 (if time): Guitar Practice Tracker MVP or Indie Hacker Game launch
+- [ ] Sprint 2 (if time): Guitar Practice Tracker MVP
 - [ ] Master's: wrap up final coursework
 
 ## June-July
 
 - [ ] PhotoHouseAI: if working → scale down the coast (Benidorm, Torrevieja, Santa Pola)
 - [ ] Consider hiring a part-time sales person or using real estate Facebook groups
-- [ ] If generating cash → consider fixing FotoCV as second product
+- [ ] Consider fixing FotoCV (broken emails/webhooks) — costs are pay-per-use, no upfront AI spend needed. Could also switch from Astria to cheaper providers (Replicate, Fal AI, etc.)
 - [ ] Master's final project — try to make it useful as a product
-- [ ] One more sprint if time (Vibe Coding Platform or Guitar Practice Tracker)
+- [ ] One more sprint if time (Guitar Practice Tracker)
 
 ## August
 
