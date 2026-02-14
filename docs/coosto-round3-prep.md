@@ -736,9 +736,11 @@ See `coosto-study-resources.md` for video/doc links.
 - Guided Vue patterns: typed props/emits, reactive state, composable, Pinia store (45 min)
 - Guided JS patterns: debounce, array chains, async/await (30 min)
 - If time: Vitest component test (15 min)
+- **Extra (low energy / evening):** Scrimba or Vue School interactive tutorials — Composition API, Pinia
 
 ### Day 4 — Sunday Feb 16 (THE BIG DAY — afternoon + evening, ~3-4h)
 **Full practice — Round 2-3 with decreasing help**
+- **Extra (morning / beach walk):** Scrimba Vue tutorials on phone if you feel like it
 - Vue patterns from memory, Claude hints only when stuck (45 min)
 - JS/TS patterns from memory (30 min)
 - Pinia/Vuex migration video (15 min passive break)

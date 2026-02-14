@@ -132,8 +132,10 @@
 - Guided Vue patterns with Claude — Round 1: type along + retry from memory (45 min)
 - Guided JS patterns — Round 1: debounce, array chains, async/await (30 min)
 - If time: Vitest component test (15 min)
+- **Extra (low energy / evening):** Scrimba or Vue School interactive tutorials
 
 ### Day 4 — Sunday Feb 16 (BIG DAY — ~3-4h)
+- **Extra (morning / beach walk):** Scrimba Vue tutorials on phone if you feel like it
 - Vue + JS patterns from memory — Round 2-3, less help each time (1h 15min)
 - Watch Pinia/Vuex migration video (#4) (15 min break)
 - Exercise 1: Todo List — guided then solo rebuild (40 min)
